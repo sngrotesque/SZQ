@@ -38,9 +38,6 @@
 #define SZQ_ADD_RK(index, n) ((index + n) % SZQ_BLOCKLEN)
 #define SZQ_SUB_RK(index, n) (((index - n) % SZQ_BLOCKLEN) & 0xff)
 
-#define SZQ_E(m, k) ((((m - k) ^ ~(k+78)) - (((k+17) & 0xff) >> 1)) & 0xff)
-#define SZQ_D(c, k) ((((c + (((k+17) & 0xff) >> 1)) ^ ~(k+78)) + k) & 0xff)
-
 typedef uint8_t szqState_t[SZQ_NK][SZQ_NK];
 typedef struct {
     uint8_t iv[SZQ_BLOCKLEN];
